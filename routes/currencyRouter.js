@@ -15,8 +15,12 @@ var corsOptions = {
 }
 
 const { getAllCurrencies } = require('../controllers/currenciesController');
+const { getMockCurrencies } = require('../controllers/currenciesController');
+
+
 
 // Note: this route is actually /albums due to our index.js setup
 router.get('/',cors(whitelist), getAllCurrencies);
+router.get('/mock',cors(whitelist), getMockCurrencies);
 
 module.exports = router;
