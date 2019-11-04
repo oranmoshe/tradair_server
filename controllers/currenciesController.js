@@ -6,7 +6,7 @@ module.exports = {
         sql.query("SELECT p2.id as currency_pair_id, p1.name as name, rate, time_created\n" +
             "FROM currency_pairs as p1 \n" +
             "JOIN rates AS p2 ON p1.id = p2.currency_pair_id \n" +
-            "WHERE p2.time_created > DATE('2019-05-16') - INTERVAL 7 DAY\n" +
+            "WHERE p2.time_created > (SELECT MAX(time_created) FROM currency_pairs) - INTERVAL 7 DAY\n" +
             "ORDER BY p2.time_created, name ", function (err, res) {
             if(err) {
                 console.log("error: ", err);
