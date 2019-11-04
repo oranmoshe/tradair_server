@@ -6,6 +6,6 @@ const currencyRouter = require('./currencyRouter');
 const indexRouter = require('./indexRouter');
 
 router.use('/api/currencies', currencyRouter);
-router.use('/view',indexRouter)
+router.use('/view', indexRouter);
 
 module.exports = router;

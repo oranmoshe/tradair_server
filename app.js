@@ -6,7 +6,6 @@ const routes = require('./routes');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use('/', routes);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
